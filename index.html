@@ -2,337 +2,129 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>MADXROHIT</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maintenance | MADXROHIT</title>
 
 <style>
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
-html,body{width:100%;overflow-x:hidden;}
+*{box-sizing:border-box;}
 body{
   margin:0;
-  background:#0b0f1f;
-  font-family:Arial,sans-serif;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:radial-gradient(circle at top,#141933,#0b0f1f);
+  font-family:Arial, sans-serif;
   color:#fff;
 }
 
-/* ===== GLOBAL DARK RIPPLE ===== */
-.global-ripple{
-  position:fixed;
-  border-radius:50%;
-  pointer-events:none;
-  transform:scale(0);
-  animation:globalRipple 1s ease-out;
-  background:radial-gradient(circle,
-    rgba(108,99,255,.35) 0%,
-    rgba(108,99,255,.25) 35%,
-    rgba(108,99,255,.12) 55%,
-    transparent 75%);
-  z-index:9999;
-}
-@keyframes globalRipple{
-  to{transform:scale(1);opacity:0;}
-}
-
-/* ===== HEADER ===== */
-.header{
-  background:linear-gradient(180deg,#0e1226,#141933);
-  padding:12px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-.header-btn{
-  width:40px;height:40px;
-  border-radius:12px;
-  background:#1a1f3d;
-  display:flex;align-items:center;justify-content:center;
-}
-.header-center{
-  display:flex;align-items:center;gap:8px;
-  font-size:17px;font-weight:bold;
-}
-.logo{
-  width:34px;height:34px;
-  border-radius:10px;
-  background:#6c63ff;
-  display:flex;align-items:center;justify-content:center;
-}
-
-/* ===== CONTAINER ===== */
-.container{
-  width:100%;
-  max-width:480px;
-  margin:auto;
-  padding:10px;
-}
-
-/* ===== APP CARD ===== */
-.card{
-  background:#141933;
-  border-radius:16px;
-  padding:14px;
-  margin-bottom:14px;
-  display:flex;
-  align-items:center;
-}
-.icon{width:56px;height:56px;border-radius:12px;}
-.info{flex:1;margin-left:10px;}
-.info h3{margin:0;font-size:16px;}
-.info p{margin-top:4px;font-size:12px;color:#aaa;} /* VERSION TEXT */
-.buttons{display:flex;flex-direction:column;gap:6px;}
-.download,.study{
-  padding:8px 10px;
-  border-radius:10px;
-  font-size:12px;
+.box{
+  width:90%;
+  max-width:360px;
+  background:linear-gradient(180deg,#141933,#0e1226);
+  border-radius:20px;
+  padding:24px 18px;
   text-align:center;
-  color:#fff;
-  text-decoration:none;
-  position:relative;
-  overflow:hidden;
+  box-shadow:0 0 30px rgba(0,0,0,.7);
 }
-.download{background:#6c63ff;}
-.study{background:#19c9a8;}
 
-/* ===== BUTTON BIG DARK GREEN RIPPLE ===== */
-.btn-wave{
-  position:absolute;
+/* ICON */
+.icon{
+  width:64px;
+  height:64px;
   border-radius:50%;
-  transform:scale(0);
-  animation:btnRipple .7s ease-out;
-  pointer-events:none;
-}
-.download .btn-wave,
-.study .btn-wave{
-  background:radial-gradient(circle,
-    rgba(20,180,90,.8) 0%,
-    rgba(20,180,90,.45) 45%,
-    rgba(20,180,90,.25) 60%,
-    transparent 75%);
-}
-@keyframes btnRipple{
-  to{transform:scale(4.5);opacity:0;}
-}
-
-/* ===== ABOUT ===== */
-.about{
-  background:#141933;
-  border-radius:16px;
-  padding:14px;
-  margin:20px 0;
-}
-.about img{
-  width:100px;height:100px;
-  border-radius:14px;
-  display:block;margin:auto;
-}
-.about h2{text-align:center;font-size:17px;margin:10px 0 4px;}
-.about p{text-align:center;font-size:12px;color:#aaa;}
-.info-box{
-  background:#1a1f3d;
-  padding:9px;
-  border-radius:10px;
-  margin-top:8px;
-  font-size:12px;
-}
-
-/* ===== SKILLS (BIG CIRCLE DARK RIPPLE) ===== */
-.skills{
+  background:#1f2550;
   display:flex;
-  flex-wrap:wrap;
-  gap:10px;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  margin:0 auto 12px;
+}
+
+h1{
+  margin:0;
+  font-size:20px;
+}
+p{
+  font-size:12px;
+  color:#bbb;
+  line-height:1.6;
+  margin-top:10px;
+}
+
+/* TAGS */
+.tags{
+  display:flex;
+  justify-content:center;
+  gap:6px;
   margin-top:14px;
-  justify-content:center;
+  flex-wrap:wrap;
 }
-.skill{
-  width:90px;
-  height:90px;
-  background:radial-gradient(circle at top,#1f2550,#12162d);
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  font-size:12px;
-  position:relative;
-  overflow:hidden;
-}
-.skill-wave{
-  position:absolute;
-  border-radius:50%;
-  transform:scale(0);
-  animation:skillRipple .9s ease-out;
-  pointer-events:none;
-  background:radial-gradient(circle,
-    rgba(108,99,255,.5) 0%,
-    rgba(108,99,255,.25) 45%,
-    transparent 70%);
-}
-@keyframes skillRipple{
-  to{transform:scale(3.8);opacity:0;}
-}
-
-/* ===== CONTACT ===== */
-.contact-card{
-  background:linear-gradient(180deg,#141933,#0b0f1f);
-  border-radius:16px;
-  padding:14px;
-  margin:20px 0;
-}
-.contact-card h3{text-align:center;color:#6c63ff;}
-.contact-card a{
-  display:block;
-  margin:8px 0;
-  padding:10px;
-  border-radius:12px;
+.tag{
   background:#1a1f3d;
-  color:#fff;
-  text-decoration:none;
-  text-align:center;
-  font-size:13px;
+  padding:4px 10px;
+  border-radius:14px;
+  font-size:10px;
+  color:#6c63ff;
 }
 
-/* ===== COPYRIGHT ===== */
-.copyright{
-  margin:25px 10px 15px;
-  padding:14px;
-  border-radius:14px;
-  background:linear-gradient(180deg,#0b0f1f,#141933);
-  border:1px solid rgba(108,99,255,.25);
-  text-align:center;
+/* SMALL CONTACT LINKS */
+.contact{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  margin-top:18px;
+}
+.contact a{
   font-size:12px;
   color:#aaa;
+  text-decoration:none;
+  padding:6px 10px;
+  border-radius:10px;
+  background:#1a1f3d;
 }
-.copyright span{
-  display:block;
-  margin-top:6px;
+.contact a:hover{
+  color:#fff;
+}
+
+/* FOOTER */
+.footer{
+  margin-top:18px;
+  font-size:10px;
   color:#6c63ff;
-  letter-spacing:2px;
+  letter-spacing:1.5px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<div class="header">
-  <div class="header-btn">☰</div>
-  <div class="header-center">
-    <div class="logo">⚡</div>
-    MADXROHIT
-  </div>
-  <div class="header-btn">☰</div>
-</div>
+<div class="box">
+  <div class="icon">🚧</div>
 
-<!-- APPS -->
-<div class="container" id="appList"></div>
+  <h1>Under Maintenance</h1>
+  <p>
+    Website temporarily band hai.<br>
+    Kuch updates chal rahe hain.<br>
+    Please thodi der baad aaye.
+  </p>
 
-<!-- ABOUT + SKILLS -->
-<div class="container">
-  <div class="about">
-    <img src="https://via.placeholder.com/150">
-    <h2>Rohit (MADXROHIT)</h2>
-    <p>Education Purpose Projects</p>
-
-    <div class="info-box">🚫 Selling Not Allowed</div>
-    <div class="info-box">✅ Free For Everyone</div>
-
-    <h3 style="text-align:center;margin-top:14px;">🛠 Skills</h3>
-    <div class="skills">
-      <div class="skill">HTML</div>
-      <div class="skill">CSS</div>
-      <div class="skill">JavaScript</div>
-      <div class="skill">App Dev</div>
-      <div class="skill">UI/UX</div>
-    </div>
+  <div class="tags">
+    <div class="tag">EDUCATION</div>
+    <div class="tag">FREE</div>
+    <div class="tag">NO SELL</div>
   </div>
 
-  <!-- CONTACT -->
-  <div class="contact-card">
-    <h3>📬 Get In Touch</h3>
-    <a href="https://whatsapp.com/channel/0029VakDgLmBA1f6TRykhY0E">📱 WhatsApp</a>
-    <a href="https://t.me/+DVRwarcX1bk0NGNl">✈️ Telegram</a>
-    <a href="https://instagram.com/madxrohit7">📸 Instagram</a>
-    <a href="https://youtube.com/@madxrohit7">▶️ YouTube</a>
+  <!-- SMALL CONTACT -->
+  <div class="contact">
+    <a href="https://whatsapp.com/channel/0029VakDgLmBA1f6TRykhY0E">WhatsApp</a>
+    <a href="https://t.me/+DVRwarcX1bk0NGNl">Telegram</a>
   </div>
 
-  <!-- COPYRIGHT -->
-  <div class="copyright">
-    © 2025 – 2050 • COPYRIGHT PROTECTED
-    <span>FREE FOR ALL</span>
+  <div class="footer">
+    © MADXROHIT • 2025–2050
   </div>
 </div>
-
-<script>
-/* ===== APP DATA ===== */
-const studyLink="https://whatsapp.com/channel/0029VaoR6zDG8l5720JUZf1T";
-const apps=[
- {name:"Vidyakul",version:"VK MOD APK v10.21.6",image:"https://via.placeholder.com/60",download:"https://t.me/madxrohit",study:studyLink},
- {name:"KD LIVE",version:"KD MOD APK v10.21.6",image:"https://via.placeholder.com/60",download:"https://aratt.ai/@madxrohit",study:studyLink},
- {name:"Education Baba",version:"EB MOD APK v10.21.6",image:"https://via.placeholder.com/60",download:"https://example.com",study:studyLink},
- {name:"CARRERWILL",version:"VK MOD APK v10.21.6",image:"https://via.placeholder.com/60",download:"https://bit.ly/3XIeWWU",study:studyLink},
- {name:"Physics Wallah",version:"VK MOD APK v10.21.6",image:"https://via.placeholder.com/60",download:"https://t.me/madxrohit",study:studyLink}
-];
-
-/* RENDER APPS */
-const list=document.getElementById("appList");
-apps.forEach(a=>{
- list.innerHTML+=`
- <div class="card">
-   <img src="${a.image}" class="icon">
-   <div class="info">
-     <h3>${a.name}</h3>
-     <p>${a.version}</p>
-   </div>
-   <div class="buttons">
-     <a href="${a.download}" class="download">Download</a>
-     <a href="${a.study}" class="study">Let's Study</a>
-   </div>
- </div>`;
-});
-
-/* BUTTON RIPPLE */
-document.addEventListener("click",e=>{
- const btn=e.target.closest(".download,.study");
- if(btn){
-  const w=document.createElement("span");
-  w.className="btn-wave";
-  const r=btn.getBoundingClientRect();
-  const s=Math.max(r.width,r.height)*1.2;
-  w.style.width=w.style.height=s+"px";
-  w.style.left=(e.clientX-r.left-s/2)+"px";
-  w.style.top=(e.clientY-r.top-s/2)+"px";
-  btn.appendChild(w);
-  setTimeout(()=>w.remove(),700);
- }
-});
-
-/* SKILL RIPPLE */
-document.addEventListener("click",e=>{
- const skill=e.target.closest(".skill");
- if(skill){
-  const s=document.createElement("span");
-  s.className="skill-wave";
-  s.style.width=s.style.height="120px";
-  s.style.left="50%";
-  s.style.top="50%";
-  s.style.transform="translate(-50%,-50%) scale(0)";
-  skill.appendChild(s);
-  setTimeout(()=>s.remove(),900);
- }
-});
-
-/* GLOBAL RIPPLE */
-document.addEventListener("click",e=>{
- const r=document.createElement("div");
- r.className="global-ripple";
- const s=Math.max(window.innerWidth,window.innerHeight);
- r.style.width=r.style.height=s+"px";
- r.style.left=(e.clientX-s/2)+"px";
- r.style.top=(e.clientY-s/2)+"px";
- document.body.appendChild(r);
- setTimeout(()=>r.remove(),1000);
-});
-</script>
 
 </body>
 </html>
