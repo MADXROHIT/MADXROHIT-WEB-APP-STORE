@@ -9,36 +9,12 @@
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{margin:0;background:#0b0f1f;color:#fff;font-family:Arial,sans-serif}
 
-/* SPLASH */
-#splash{
-  position:fixed;inset:0;
-  background:radial-gradient(circle at top,#141933,#0b0f1f);
-  display:flex;align-items:center;justify-content:center;
-  z-index:9999
-}
-.splash-box{text-align:center}
-.splash-logo{
-  width:100px;height:100px;border-radius:26px;
-  background:linear-gradient(135deg,#6c63ff,#4338ca);
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 0 45px rgba(108,99,255,.9)
-}
-.splash-logo img{width:70%;height:70%}
-.loader{
-  margin:18px auto 0;
-  width:60px;height:60px;border-radius:50%;
-  border:4px solid rgba(255,255,255,.15);
-  border-top-color:#6c63ff;
-  animation:spin 1s linear infinite
-}
-@keyframes spin{to{transform:rotate(360deg)}}
-
 /* HEADER */
 .header{
   padding:12px;
   background:linear-gradient(180deg,#0e1226,#141933);
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  font-weight:bold;text-align:center
+  display:flex;align-items:center;justify-content:center;
+  gap:10px;font-weight:bold;text-align:center
 }
 .header img{width:34px;height:34px;border-radius:10px}
 
@@ -49,10 +25,10 @@ body{margin:0;background:#0b0f1f;color:#fff;font-family:Arial,sans-serif}
 .card{
   background:#141933;
   border-radius:18px;
-  padding:14px;
-  margin-bottom:16px;
+  padding:16px;
+  margin-bottom:18px;
+  text-align:center;
   position:relative;
-  text-align:center
 }
 .badge{
   position:absolute;top:10px;right:10px;
@@ -63,71 +39,100 @@ body{margin:0;background:#0b0f1f;color:#fff;font-family:Arial,sans-serif}
 .icon{width:72px;height:72px;border-radius:16px}
 .meta{font-size:12px;color:#aaa;margin-top:4px}
 
-/* SKILLS */
-.skills{
-  display:flex;justify-content:center;gap:6px;
-  margin-top:8px;flex-wrap:wrap
+/* SKILLS CARD */
+.skill-card{
+  margin-top:12px;
+  background:#10152c;
+  border-radius:14px;
+  padding:10px;
 }
-.skill{
-  font-size:11px;
-  background:#1a1f3d;
-  padding:4px 10px;border-radius:12px
+.skill-title{
+  font-size:12px;
+  color:#6c63ff;
+  margin-bottom:8px;
+}
+.skill-list{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+}
+.skill-circle{
+  width:56px;height:56px;
+  border-radius:50%;
+  background:radial-gradient(circle at top,#1f2550,#0b0f1f);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:10px;
+  text-align:center;
+  line-height:1.1;
 }
 
 /* BUTTONS */
-.buttons{display:flex;gap:10px;margin-top:12px}
+.buttons{
+  display:flex;
+  gap:10px;
+  margin-top:14px;
+}
 .buttons a{
-  flex:1;padding:10px;border-radius:12px;
-  text-decoration:none;color:#fff;font-size:13px
+  flex:1;
+  padding:11px;
+  border-radius:14px;
+  text-decoration:none;
+  color:#fff;
+  font-size:13px;
 }
 .download{background:#6c63ff}
 .study{background:#19c9a8}
 
 /* ABOUT */
 .about{
-  background:#141933;border-radius:16px;
-  padding:14px;margin:20px 0
+  background:#141933;
+  border-radius:16px;
+  padding:14px;
+  margin:20px 0;
 }
 .about img{width:100px;height:100px;border-radius:14px;display:block;margin:auto}
 .about h2{text-align:center;margin:10px 0 4px}
 .about p{text-align:center;font-size:12px;color:#aaa}
 .info-box{
-  background:#1a1f3d;padding:9px;
-  border-radius:10px;margin-top:8px;font-size:12px
+  background:#1a1f3d;
+  padding:9px;
+  border-radius:10px;
+  margin-top:8px;
+  font-size:12px;
 }
 
 /* SOCIAL */
 .social a{
-  display:flex;align-items:center;gap:10px;
-  background:#1a1f3d;padding:10px;
-  border-radius:12px;margin:8px 0;
-  color:#fff;text-decoration:none
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:#1a1f3d;
+  padding:10px;
+  border-radius:12px;
+  margin:8px 0;
+  color:#fff;
+  text-decoration:none;
 }
 .social img{width:22px;height:22px}
 
 /* FOOTER */
 .footer{
-  margin:25px 10px;padding:14px;
+  margin:25px 10px;
+  padding:14px;
   border-radius:14px;
   background:linear-gradient(180deg,#0b0f1f,#141933);
   border:1px solid rgba(108,99,255,.25);
-  text-align:center;font-size:12px;color:#aaa
+  text-align:center;
+  font-size:12px;
+  color:#aaa;
 }
 .footer span{display:block;margin-top:6px;color:#6c63ff;letter-spacing:2px}
 </style>
 </head>
 
 <body>
-
-<!-- SPLASH -->
-<div id="splash">
-  <div class="splash-box">
-    <div class="splash-logo">
-      <img src="https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/8717919b4fdb32507f78f8e182d7bb746430f4f4/image.png">
-    </div>
-    <div class="loader"></div>
-  </div>
-</div>
 
 <!-- HEADER -->
 <div class="header">
@@ -138,7 +143,7 @@ body{margin:0;background:#0b0f1f;color:#fff;font-family:Arial,sans-serif}
 <!-- APPS -->
 <div class="container" id="appList"></div>
 
-<!-- ABOUT -->
+<!-- ABOUT DEVELOPER -->
 <div class="container">
 <div class="about">
   <h3 style="text-align:center;">About Developer</h3>
@@ -146,20 +151,11 @@ body{margin:0;background:#0b0f1f;color:#fff;font-family:Arial,sans-serif}
   <h2>MADXROHIT</h2>
   <p>Education Purpose Projects</p>
 
-  <div class="info-box">🎓 Class 12th (PCMB)</div>
-  <div class="info-box">📍 Bihar, India</div>
-  <div class="info-box">🎂 23 August | Age 17</div>
+  <div class="info-box">🎓 Education: Class 12th (PCMB)</div>
+  <div class="info-box">📍 Location: Bihar, India</div>
+  <div class="info-box">🎂 DOB: 23 August | Age 17</div>
   <div class="info-box">🚫 Selling Not Allowed</div>
   <div class="info-box">✅ Free For All</div>
-
-  <h3 style="text-align:center;margin-top:12px;">Skills</h3>
-  <div class="skills">
-    <div class="skill">HTML</div>
-    <div class="skill">CSS</div>
-    <div class="skill">JavaScript</div>
-    <div class="skill">UI/UX</div>
-    <div class="skill">App Dev</div>
-  </div>
 </div>
 
 <!-- SOCIAL -->
@@ -185,59 +181,50 @@ body{margin:0;background:#0b0f1f;color:#fff;font-family:Arial,sans-serif}
 </div>
 
 <script>
-/* SPLASH REMOVE */
-window.onload=()=>setTimeout(()=>{
-  const s=document.getElementById("splash");
-  s.style.opacity="0";
-  setTimeout(()=>s.remove(),600);
-},1500);
-
-/* APPS */
 const studyLink="https://whatsapp.com/channel/0029VaoR6zDG8l5720JUZf1T";
+
 const apps=[
-"Testbook","KD LIVE","Selection Way","Careerwill","Next Topper",
-"Study IQ","Rojgar With Ankit","CDS Journey","Khan Global Studies",
-"UC Live Rani Mam","Gyanbindu","GK GS Masti","Physics Wallah",
-"Disha Online Class","Unacademy"
+{name:"Testbook",img:"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/1b9253f9b1de5baaa93e0cd4f5a20429103124bd/Testbook_image.Png",dl:"https://github.com/MADXROHIT/APP-STORE-MADXROHIT-/raw/refs/heads/main/Testbook%20(2).apk"},
+{name:"KD LIVE",img:"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/7845d02bc0ad95a3da63f25f149fed26bb308bc0/kdlive.png",dl:"https://github.com/MADXROHIT/APP-STORE-MADXROHIT-/raw/refs/heads/main/KD%20Live%20(3).apk"},
+{name:"Selection Way",img:"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/1201c176a8af237845d007591b022b5f5e4eb53f/Selection_way.Png",dl:"https://github.com/MADXROHIT/APP-STORE-MADXROHIT-/raw/refs/heads/main/Selection%20way%20(4)%20(1).apk"},
+{name:"Careerwill",img:"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/39436ac66b7c7539dcb398d0e586ed26ce52b001/cw_image_.png",dl:"https://bit.ly/3XIeWWU"},
+{name:"Next Topper",img:"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/c58128ccf02bd1d6979ab2fab8f2df3ee4442d30/next_topper_image.png",dl:"https://github.com/MADXROHIT/APP-STORE-MADXROHIT-/raw/refs/heads/main/Next%20Topper%20(2).apk"},
+{name:"Study IQ",img:"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/6b8fa461ef695e8b25c259210e138ba1d42a8122/studyiq_image_.png",dl:"https://github.com/MADXROHIT/APP-STORE-MADXROHIT-/raw/refs/heads/main/Study%20IQ%20MADXROHIT"},
+{name:"Rojgar With Ankit",img:"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/d41a6db4d142e26535f3fe3e536a7520dee20cae/rwa_image_.png",dl:"https://github.com/MADXROHIT/APP-STORE-MADXROHIT-/raw/refs/heads/main/Rojgar%20with%20ankit%20(9).apk"},
+{name:"CDS Journey",img:"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/105e804cde37f48520e11a9fc2280c7918809a24/cds_journey%20_image.Png",dl:"https://github.com/MADXROHIT/APP-STORE-MADXROHIT-/raw/refs/heads/main/Cds%20Journey%20(2).apk"},
+{name:"Khan Global Studies",img:"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/7db44d7e2bbefa7150c492453a4dadbb59693b63/kgs_image_.png",dl:"https://t.me/madxrohit"},
+{name:"UC Live Rani Mam",img:"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/f940df132047fe8a553ee8321e591bcbcfc0e0b9/uc_live_rani_mam_image_.png",dl:"https://t.me/madxrohit"},
+{name:"Gyanbindu",img:"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/43752aaf2198a001e2bbd390012e00048cd6ca15/gyanbindu_image_.png",dl:"https://t.me/madxrohit"},
+{name:"GK GS Masti",img:"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/82257da6bc9c75a5afa352f6ab235de3e2912241/gkgsmasti_image.png",dl:"https://t.me/madxrohit"},
+{name:"Physics Wallah",img:"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/8306e5158364e0b380b6ed984e9a1c01d7b14aa0/pw_image.png",dl:"https://github.com/MADXROHIT/APP-STORE-MADXROHIT-/raw/refs/heads/main/PW%20(5).apk"},
+{name:"Disha Online Class",img:"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/ec04530eb48df0bb1319ef610b4aca4da56a221b/disha_onlineclass_mage.png",dl:"https://t.me/madxrohit"},
+{name:"Unacademy",img:"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/105e804cde37f48520e11a9fc2280c7918809a24/unacademy-image_.png",dl:"https://github.com/MADXROHIT/APP-STORE-MADXROHIT-/raw/refs/heads/main/Unacademy%20(1).apk"}
 ];
 
-const images={
-"Testbook":"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/1b9253f9b1de5baaa93e0cd4f5a20429103124bd/Testbook_image.Png",
-"KD LIVE":"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/7845d02bc0ad95a3da63f25f149fed26bb308bc0/kdlive.png",
-"Selection Way":"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/1201c176a8af237845d007591b022b5f5e4eb53f/Selection_way.Png",
-"Careerwill":"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/39436ac66b7c7539dcb398d0e586ed26ce52b001/cw_image_.png",
-"Next Topper":"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/c58128ccf02bd1d6979ab2fab8f2df3ee4442d30/next_topper_image.png",
-"Study IQ":"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/6b8fa461ef695e8b25c259210e138ba1d42a8122/studyiq_image_.png",
-"Rojgar With Ankit":"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/d41a6db4d142e26535f3fe3e536a7520dee20cae/rwa_image_.png",
-"CDS Journey":"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/105e804cde37f48520e11a9fc2280c7918809a24/cds_journey%20_image.Png",
-"Khan Global Studies":"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/7db44d7e2bbefa7150c492453a4dadbb59693b63/kgs_image_.png",
-"UC Live Rani Mam":"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/f940df132047fe8a553ee8321e591bcbcfc0e0b9/uc_live_rani_mam_image_.png",
-"Gyanbindu":"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/43752aaf2198a001e2bbd390012e00048cd6ca15/gyanbindu_image_.png",
-"GK GS Masti":"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/82257da6bc9c75a5afa352f6ab235de3e2912241/gkgsmasti_image.png",
-"Physics Wallah":"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/8306e5158364e0b380b6ed984e9a1c01d7b14aa0/pw_image.png",
-"Disha Online Class":"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/ec04530eb48df0bb1319ef610b4aca4da56a221b/disha_onlineclass_mage.png",
-"Unacademy":"https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/105e804cde37f48520e11a9fc2280c7918809a24/unacademy-image_.png"
-};
-
 const list=document.getElementById("appList");
-apps.forEach(n=>{
-  const size=(Math.random()*5+10).toFixed(1)+" MB";
-  list.innerHTML+=`
-  <div class="card">
-    <div class="badge">NEW</div>
-    <img src="${images[n]}" class="icon">
-    <h3>${n}</h3>
-    <div class="meta">Version v10.21.6 • ${size}</div>
-    <div class="skills">
-      <div class="skill">Premium</div>
-      <div class="skill">MOD</div>
-      <div class="skill">Ads Free</div>
+apps.forEach(a=>{
+ const size=(Math.random()*5+10).toFixed(1)+" MB";
+ list.innerHTML+=`
+ <div class="card">
+  <div class="badge">NEW</div>
+  <img src="${a.img}" class="icon">
+  <h3>${a.name}</h3>
+  <div class="meta">Version v10.21.6 • ${size}</div>
+
+  <div class="skill-card">
+    <div class="skill-title">SKILLS</div>
+    <div class="skill-list">
+      <div class="skill-circle">Premium</div>
+      <div class="skill-circle">MOD</div>
+      <div class="skill-circle">Ads Free</div>
     </div>
-    <div class="buttons">
-      <a class="download" href="#">Download</a>
-      <a class="study" href="${studyLink}">Let's Study</a>
-    </div>
-  </div>`;
+  </div>
+
+  <div class="buttons">
+    <a class="download" href="${a.dl}" target="_blank">Download</a>
+    <a class="study" href="${studyLink}" target="_blank">Let's Study</a>
+  </div>
+ </div>`;
 });
 </script>
 
