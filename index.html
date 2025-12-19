@@ -17,45 +17,32 @@ body{
 
 /* SPLASH */
 #splash{
-  position:fixed;
-  inset:0;
+  position:fixed;inset:0;
   background:radial-gradient(circle at top,#141933,#0b0f1f);
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display:flex;align-items:center;justify-content:center;
   z-index:99999;
 }
 .splash-inner{text-align:center}
 .splash-logo{
-  width:110px;height:110px;
-  border-radius:28px;
+  width:110px;height:110px;border-radius:28px;
   background:linear-gradient(135deg,#6c63ff,#4338ca);
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display:flex;align-items:center;justify-content:center;
   box-shadow:0 0 50px rgba(108,99,255,.9);
 }
 .splash-logo img{width:70%;height:70%}
 .loader{
-  width:60px;height:60px;
-  border-radius:50%;
+  width:60px;height:60px;border-radius:50%;
   border:4px solid rgba(255,255,255,.15);
   border-top-color:#6c63ff;
   margin:18px auto 6px;
   animation:spin 1s linear infinite;
 }
-.splash-text{
-  font-size:13px;
-  letter-spacing:2px;
-  color:#6c63ff;
-}
+.splash-text{font-size:13px;letter-spacing:2px;color:#6c63ff}
 @keyframes spin{to{transform:rotate(360deg)}}
 
-/* GLOBAL RIPPLE */
+/* RIPPLE */
 .global-ripple{
-  position:fixed;
-  border-radius:50%;
-  pointer-events:none;
+  position:fixed;border-radius:50%;pointer-events:none;
   transform:scale(0);
   animation:ripple 1.3s ease-out;
   background:radial-gradient(circle,
@@ -67,157 +54,91 @@ body{
 }
 @keyframes ripple{to{transform:scale(1);opacity:0}}
 
-/* HEADER */
 .header{
   padding:12px;
   background:linear-gradient(180deg,#0e1226,#141933);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  font-weight:bold;
-  text-align:center;
+  display:flex;align-items:center;justify-content:center;
+  gap:10px;font-weight:bold;text-align:center;
 }
 .header img{width:34px;height:34px;border-radius:10px}
 
-/* CONTAINER */
 .container{max-width:480px;margin:auto;padding:12px}
 
-/* APP CARD */
 .card{
-  background:#141933;
-  border-radius:18px;
-  padding:14px;
-  margin-bottom:16px;
-  position:relative;
-  text-align:center;
+  background:#141933;border-radius:18px;
+  padding:14px;margin-bottom:16px;
+  position:relative;text-align:center;
 }
 .badge{
-  position:absolute;
-  top:10px;right:10px;
-  background:#ff3b3b;
-  color:#fff;
-  font-size:11px;
-  padding:4px 10px;
-  border-radius:20px;
+  position:absolute;top:10px;right:10px;
+  background:#ff3b3b;color:#fff;
+  font-size:11px;padding:4px 10px;border-radius:20px;
 }
 .icon{width:70px;height:70px;border-radius:16px}
 .meta{font-size:12px;color:#aaa;margin-top:4px}
 
-/* BUTTONS */
 .buttons{display:flex;gap:10px;margin-top:12px}
 .buttons a{
-  flex:1;
-  padding:10px;
-  border-radius:12px;
-  text-decoration:none;
-  color:#fff;
-  font-size:13px;
+  flex:1;padding:10px;border-radius:12px;
+  text-decoration:none;color:#fff;font-size:13px;
 }
 .download{background:#6c63ff}
 .study{background:#19c9a8}
 
+/* TESTBOOK OFFER */
+.testbook-offer{
+  margin-top:12px;background:#1a1f3d;
+  border-radius:14px;padding:10px;
+}
+.testbook-offer img{width:100%;border-radius:12px}
+.testbook-offer a{
+  display:block;margin-top:8px;padding:10px;
+  border-radius:12px;
+  background:linear-gradient(135deg,#ff9900,#ffcc66);
+  color:#000;font-weight:bold;text-decoration:none;
+  font-size:13px;
+}
+.testbook-offer span{font-size:11px;color:#aaa}
+
 /* ABOUT */
 .about{
-  background:#141933;
-  border-radius:16px;
-  padding:14px;
-  margin:20px 0;
+  background:#141933;border-radius:16px;
+  padding:14px;margin:20px 0;
 }
 .about img{
-  width:100px;height:100px;
-  border-radius:14px;
+  width:100px;height:100px;border-radius:14px;
   display:block;margin:auto;
 }
 .about h2{text-align:center;margin:10px 0 4px}
 .about p{text-align:center;font-size:12px;color:#aaa}
 
-.info-card{
-  background:#1a1f3d;
-  border-radius:14px;
-  padding:12px;
-  display:flex;
-  gap:12px;
-  align-items:center;
-  margin-top:10px;
-}
-
-/* SKILLS */
 .skills{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  justify-content:center;
-  margin-top:14px;
+  display:flex;gap:10px;flex-wrap:wrap;
+  justify-content:center;margin-top:14px;
 }
 .skill{
-  width:90px;height:90px;
-  border-radius:50%;
+  width:90px;height:90px;border-radius:50%;
   background:radial-gradient(circle at top,#1f2550,#0b0f1f);
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display:flex;align-items:center;justify-content:center;
   font-size:12px;
 }
 
-/* SOCIAL */
 .social a{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  background:#1a1f3d;
-  padding:12px;
-  border-radius:14px;
-  margin-bottom:10px;
-  color:#fff;
-  text-decoration:none;
+  display:flex;align-items:center;gap:12px;
+  background:#1a1f3d;padding:12px;
+  border-radius:14px;margin-bottom:10px;
+  color:#fff;text-decoration:none;
 }
 .social img{width:24px;height:24px}
 
-/* AFFILIATE BOOKS */
-.affiliate-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-  gap:14px;
-}
-.book-card{
-  background:#1a1f3d;
-  border-radius:16px;
-  padding:12px;
-  text-align:center;
-}
-.book-card img{
-  width:100%;
-  height:160px;
-  object-fit:cover;
-  border-radius:12px;
-}
-.book-card h4{font-size:13px;margin:8px 0 4px}
-.book-card p{font-size:12px;color:#aaa}
-.book-card a{
-  display:block;
-  margin-top:8px;
-  padding:8px;
-  border-radius:10px;
-  background:#ff9900;
-  color:#000;
-  font-size:12px;
-  font-weight:bold;
-  text-decoration:none;
-}
-
-/* FOOTER */
 .footer{
-  margin:25px 10px;
-  padding:14px;
+  margin:25px 10px;padding:14px;
   border-radius:14px;
   background:linear-gradient(180deg,#0b0f1f,#141933);
   border:1px solid rgba(108,99,255,.25);
-  text-align:center;
-  font-size:12px;
-  color:#aaa;
+  text-align:center;font-size:12px;color:#aaa;
 }
-.footer span{display:block;margin-top:6px;color:#6c63ff;letter-spacing:2px}
+.footer span{display:block;margin-top:6px;color:#6c63ff}
 </style>
 </head>
 
@@ -234,32 +155,27 @@ body{
   </div>
 </div>
 
-<!-- HEADER -->
 <div class="header">
   <img src="https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/8717919b4fdb32507f78f8e182d7bb746430f4f4/image.png">
   MADXROHIT – All Institutes Under One Universe
 </div>
 
-<!-- APPS -->
 <div class="container" id="appList"></div>
 
-<!-- ABOUT -->
 <div class="container">
 <div class="about">
   <h3 style="text-align:center;">About Developer</h3>
   <img src="https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/1608433c03fe7040cfe5a2bcb33177d831497689/ROHIT_image.png">
   <h2>MADXROHIT</h2>
-  <p>Education Purpose Projects</p>
+  <p>🎓 Class 12th (PCMB)</p>
+  <p>📍 Bihar, India</p>
+  <p>🎂 23 August | Age 17</p>
 
-  <div class="info-card">🎓 Class 12th (PCMB)</div>
-  <div class="info-card">📍 Bihar, India</div>
-  <div class="info-card">🎂 23 August | Age 17</div>
-
-  <h3 style="text-align:center;margin-top:14px;">Skills</h3>
+  <h3 style="text-align:center;">Skills</h3>
   <div class="skills">
     <div class="skill">HTML</div>
     <div class="skill">CSS</div>
-    <div class="skill">JavaScript</div>
+    <div class="skill">JS</div>
     <div class="skill">UI/UX</div>
     <div class="skill">App Dev</div>
   </div>
@@ -280,42 +196,31 @@ body{
   </div>
 </div>
 
-<!-- AFFILIATE BOOKS -->
-<div class="about">
-  <h3 style="text-align:center;">📘 Recommended Books</h3>
-  <div id="affiliateBooks" class="affiliate-grid"></div>
-</div>
-
 <div class="footer">
   © 2025 – 2050 • COPYRIGHT PROTECTED
   <span>FREE FOR ALL</span>
-  <p style="font-size:11px">
-    This website contains affiliate links. We may earn a commission at no extra cost to you.
-  </p>
 </div>
 </div>
 
 <script>
-/* SPLASH REMOVE */
+/* SPLASH */
 window.onload=()=>setTimeout(()=>{
-  const s=document.getElementById("splash");
-  s.style.opacity="0";
-  setTimeout(()=>s.remove(),600);
-},1600);
+  document.getElementById("splash").remove();
+},1500);
 
-/* GLOBAL RIPPLE */
+/* RIPPLE */
 document.addEventListener("click",e=>{
   const r=document.createElement("div");
   r.className="global-ripple";
-  const size=Math.max(innerWidth,innerHeight)*1.3;
-  r.style.width=r.style.height=size+"px";
-  r.style.left=(e.clientX-size/2)+"px";
-  r.style.top=(e.clientY-size/2)+"px";
+  const s=Math.max(innerWidth,innerHeight);
+  r.style.width=r.style.height=s+"px";
+  r.style.left=(e.clientX-s/2)+"px";
+  r.style.top=(e.clientY-s/2)+"px";
   document.body.appendChild(r);
   setTimeout(()=>r.remove(),1300);
 });
 
-/* APPS DATA */
+/* APPS – ALL */
 const studyLink="https://whatsapp.com/channel/0029VaoR6zDG8l5720JUZf1T";
 const apps=[
 ["Testbook","https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/1b9253f9b1de5baaa93e0cd4f5a20429103124bd/Testbook_image.Png","https://github.com/MADXROHIT/APP-STORE-MADXROHIT-/raw/refs/heads/main/Testbook%20(2).apk"],
@@ -338,6 +243,17 @@ const apps=[
 const list=document.getElementById("appList");
 apps.forEach(a=>{
   const size=(Math.random()*5+10).toFixed(1)+" MB";
+  let extra="";
+  if(a[0]==="Testbook"){
+    extra=`
+    <div class="testbook-offer">
+      <img src="https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/main/IMG_20251219_072530.jpg">
+      <a href="https://testbook.com/invite/6IPB5G" target="_blank">
+        Testbook Upto 90% Discount
+      </a>
+      <span>Official Offer • Limited Time</span>
+    </div>`;
+  }
   list.innerHTML+=`
   <div class="card">
     <div class="badge">NEW</div>
@@ -348,28 +264,7 @@ apps.forEach(a=>{
       <a class="download" href="${a[2]}" target="_blank">Download</a>
       <a class="study" href="${studyLink}" target="_blank">Let's Study</a>
     </div>
-  </div>`;
-});
-
-/* AFFILIATE BOOKS */
-const affiliateBooks=[
- {
-  title:"General Knowledge Samanya",
-  image:"https://m.media-amazon.com/images/I/81yXG+0F6nL.jpg",
-  price:"₹399",
-  link:"https://www.amazon.in/dp/B0DH6CZZ67?tag=madxrohit-21"
- }
-];
-const box=document.getElementById("affiliateBooks");
-affiliateBooks.forEach(b=>{
-  box.innerHTML+=`
-  <div class="book-card">
-    <img src="${b.image}">
-    <h4>${b.title}</h4>
-    <p>${b.price}</p>
-    <a href="${b.link}" target="_blank" rel="nofollow sponsored">
-      Buy on Amazon
-    </a>
+    ${extra}
   </div>`;
 });
 </script>
