@@ -308,17 +308,6 @@ const apps=[
 const list=document.getElementById("appList");
 apps.forEach(a=>{
   const size=(Math.random()*5+10).toFixed(1)+" MB";
-  let extra="";
-  if(a[0]==="Testbook"){
-    extra=`
-    <div class="testbook-offer">
-      <img src="https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/main/IMG_20251219_072530.jpg">
-      <a href="none" target="_blank">
-        Testbook Upto 90% Discount
-      </a>
-      <span>Official Offer • Limited Time</span>
-    </div>`;
-  }
   list.innerHTML+=`
   <div class="card">
     <div class="badge">NEW</div>
@@ -329,7 +318,6 @@ apps.forEach(a=>{
       <a class="download" href="${a[2]}" target="_blank">Download</a>
       <a class="study" href="${studyLink}" target="_blank">Let's Study</a>
     </div>
-    ${extra}
   </div>`;
 });
 </script>
