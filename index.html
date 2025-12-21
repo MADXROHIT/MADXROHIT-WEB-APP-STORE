@@ -15,14 +15,24 @@ body{
   overflow-x:hidden;
 }
 
-/* SPLASH */
+/* ================= SPLASH ================= */
 #splash{
-  position:fixed;inset:0;
+  position:fixed;
+  inset:0;
   background:radial-gradient(circle at top,#141933,#0b0f1f);
-  display:flex;align-items:center;justify-content:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   z-index:99999;
+  transition:.6s ease;
 }
+#splash.hide{
+  opacity:0;
+  visibility:hidden;
+}
+
 .splash-inner{text-align:center}
+
 .splash-logo{
   width:110px;height:110px;border-radius:28px;
   background:linear-gradient(135deg,#6c63ff,#4338ca);
@@ -30,17 +40,50 @@ body{
   box-shadow:0 0 50px rgba(108,99,255,.9);
 }
 .splash-logo img{width:70%;height:70%}
-.loader{
-  width:60px;height:60px;border-radius:50%;
-  border:4px solid rgba(255,255,255,.15);
-  border-top-color:#6c63ff;
-  margin:18px auto 6px;
-  animation:spin 1s linear infinite;
-}
-.splash-text{font-size:13px;letter-spacing:2px;color:#6c63ff}
-@keyframes spin{to{transform:rotate(360deg)}}
 
-/* RIPPLE */
+.loading-text{
+  margin-top:18px;
+  font-size:14px;
+  letter-spacing:3px;
+  color:#6c63ff;
+}
+
+.progress-box{
+  width:240px;
+  height:6px;
+  background:rgba(255,255,255,.15);
+  border-radius:20px;
+  margin:12px auto 6px;
+  overflow:hidden;
+}
+.progress-bar{
+  width:0%;
+  height:100%;
+  background:linear-gradient(90deg,#6c63ff,#9b8cff);
+}
+
+.percent{
+  font-size:13px;
+  color:#aaa;
+}
+
+/* BIG FLOATING MADXROHIT */
+.splash-brand{
+  margin-top:14px;
+  font-size:40px;
+  font-weight:900;
+  letter-spacing:4px;
+  color:#ffffff;
+  animation:floatBrand 2.5s ease-in-out infinite;
+}
+
+@keyframes floatBrand{
+  0%{transform:translateY(0);opacity:.7}
+  50%{transform:translateY(-14px);opacity:1}
+  100%{transform:translateY(0);opacity:.7}
+}
+
+/* ================= RIPPLE ================= */
 .global-ripple{
   position:fixed;border-radius:50%;pointer-events:none;
   transform:scale(0);
@@ -144,14 +187,22 @@ body{
 
 <body>
 
-<!-- SPLASH -->
+<!-- ================= SPLASH ================= -->
 <div id="splash">
   <div class="splash-inner">
     <div class="splash-logo">
       <img src="https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/8717919b4fdb32507f78f8e182d7bb746430f4f4/image.png">
     </div>
-    <div class="loader"></div>
-    <div class="splash-text">WELCOME IN MADXROHIT</div>
+
+    <div class="loading-text">LOADING</div>
+
+    <div class="progress-box">
+      <div class="progress-bar" id="bar"></div>
+    </div>
+
+    <div class="percent" id="percent">0%</div>
+
+    <div class="splash-brand">MADXROHIT</div>
   </div>
 </div>
 
@@ -203,10 +254,24 @@ body{
 </div>
 
 <script>
-/* SPLASH */
-window.onload=()=>setTimeout(()=>{
-  document.getElementById("splash").remove();
-},1500);
+/* ================= SPLASH ================= */
+let p=0;
+const bar=document.getElementById("bar");
+const percent=document.getElementById("percent");
+const splash=document.getElementById("splash");
+
+const loader=setInterval(()=>{
+  p++;
+  bar.style.width=p+"%";
+  percent.innerText=p+"%";
+  if(p>=100){
+    clearInterval(loader);
+    setTimeout(()=>{
+      splash.classList.add("hide");
+      setTimeout(()=>splash.remove(),600);
+    },400);
+  }
+},25);
 
 /* RIPPLE */
 document.addEventListener("click",e=>{
