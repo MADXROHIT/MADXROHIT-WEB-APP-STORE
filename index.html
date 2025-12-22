@@ -283,23 +283,22 @@ const apps=[
 ["Unacademy","https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/105e804cde37f48520e11a9fc2280c7918809a24/unacademy-image_.png","https://github.com/MADXROHIT/APP-STORE-MADXROHIT-/raw/refs/heads/main/Unacademy%20(1).apk"]
 ];
 
-const list=document.getElementById("appList");
+const list = document.getElementById("appList");
 
-apps.forEach(app=>{
-  const size=(Math.random()*5+10).toFixed(1);   // 10–15 MB
-  const version="v"+(Math.random()*5+6).toFixed(1); // random version
+apps.forEach(app => {
+  const size = (Math.random() * 5 + 10).toFixed(1);   // 10–15 MB
+  const version = "v" + (Math.random() * 5 + 6).toFixed(1);
 
-  list.innerHTML+=`
+  list.innerHTML += `
   <div class="ribbon-card card">
     <div class="badge">NEW</div>
+
     <img src="${app[1]}" class="icon">
     <h3>${app[0]}</h3>
 
     <div class="meta">
-      Version ${version} • 
-      <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png">
-      ${size} MB<br>
-      Developer: MADXROHIT
+      Version ${version} • 💾 ${size} MB<br>
+      <span style="font-size:10px;opacity:.8">Developer: MADXROHIT</span>
     </div>
 
     <div class="buttons">
