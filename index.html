@@ -284,12 +284,24 @@ const apps=[
 ];
 
 const list=document.getElementById("appList");
+
 apps.forEach(app=>{
+  const size=(Math.random()*5+10).toFixed(1);   // 10–15 MB
+  const version="v"+(Math.random()*5+6).toFixed(1); // random version
+
   list.innerHTML+=`
   <div class="ribbon-card card">
     <div class="badge">NEW</div>
     <img src="${app[1]}" class="icon">
     <h3>${app[0]}</h3>
+
+    <div class="meta">
+      Version ${version} • 
+      <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png">
+      ${size} MB<br>
+      Developer: MADXROHIT
+    </div>
+
     <div class="buttons">
       <a class="download" href="${app[2]}" target="_blank">Download</a>
       <a class="study" href="${studyLink}" target="_blank">Let's Study</a>
