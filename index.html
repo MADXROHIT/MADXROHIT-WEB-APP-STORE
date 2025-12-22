@@ -8,91 +8,56 @@
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;padding:0}
+
+/* ===== BACKGROUND ===== */
 body{
-  background:#0b0f1f;
+  background:linear-gradient(120deg,#0b0014,#140022,#06000c);
+  background-size:300% 300%;
+  animation:bgMove 10s linear infinite;
   color:#fff;
   font-family:Arial,sans-serif;
   overflow-x:hidden;
 }
+@keyframes bgMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
 
-/* ================= SPLASH ================= */
+/* ===== SPLASH ===== */
 #splash{
-  position:fixed;
-  inset:0;
+  position:fixed;inset:0;
   background:radial-gradient(circle at top,#141933,#0b0f1f);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:99999;
-  transition:.6s ease;
+  display:flex;align-items:center;justify-content:center;
+  z-index:99999;transition:.6s;
 }
-#splash.hide{
-  opacity:0;
-  visibility:hidden;
-}
-
+#splash.hide{opacity:0;visibility:hidden}
 .splash-inner{text-align:center}
-
 .splash-logo{
   width:110px;height:110px;border-radius:28px;
   background:linear-gradient(135deg,#6c63ff,#4338ca);
-  display:flex;align-items:center;justify-content:center;
   box-shadow:0 0 50px rgba(108,99,255,.9);
 }
-.splash-logo img{width:70%;height:70%}
-
-.loading-text{
-  margin-top:18px;
-  font-size:14px;
-  letter-spacing:3px;
-  color:#6c63ff;
-}
-
-.progress-box{
-  width:240px;
-  height:6px;
-  background:rgba(255,255,255,.15);
-  border-radius:20px;
-  margin:12px auto 6px;
-  overflow:hidden;
-}
-.progress-bar{
-  width:0%;
-  height:100%;
-  background:linear-gradient(90deg,#6c63ff,#9b8cff);
-}
-
-.percent{
-  font-size:13px;
-  color:#aaa;
-}
-
-/* BIG FLOATING MADXROHIT */
+.loading-text{margin-top:18px;font-size:14px;letter-spacing:3px;color:#6c63ff}
+.progress-box{width:240px;height:6px;background:rgba(255,255,255,.15);
+border-radius:20px;margin:12px auto 6px;overflow:hidden}
+.progress-bar{height:100%;width:0;background:linear-gradient(90deg,#6c63ff,#9b8cff)}
+.percent{font-size:13px;color:#aaa}
 .splash-brand{
-  margin-top:14px;
-  font-size:40px;
-  font-weight:900;
-  letter-spacing:4px;
-  color:#ffffff;
-  animation:floatBrand 2.5s ease-in-out infinite;
+  margin-top:14px;font-size:40px;font-weight:900;letter-spacing:4px;
+  animation:floatBrand 2.5s ease-in-out infinite
 }
-
 @keyframes floatBrand{
   0%{transform:translateY(0);opacity:.7}
   50%{transform:translateY(-14px);opacity:1}
   100%{transform:translateY(0);opacity:.7}
 }
 
-/* ================= RIPPLE ================= */
+/* ===== RIPPLE ===== */
 .global-ripple{
   position:fixed;border-radius:50%;pointer-events:none;
-  transform:scale(0);
-  animation:ripple 1.3s ease-out;
-  background:radial-gradient(circle,
-    rgba(108,99,255,.45) 0%,
-    rgba(108,99,255,.25) 40%,
-    rgba(108,99,255,.12) 60%,
-    transparent 75%);
+  transform:scale(0);animation:ripple 1.3s ease-out;
+  background:radial-gradient(circle,rgba(108,99,255,.45),transparent 70%);
   z-index:9999;
 }
 @keyframes ripple{to{transform:scale(1);opacity:0}}
@@ -100,149 +65,160 @@ body{
 .header{
   padding:12px;
   background:linear-gradient(180deg,#0e1226,#141933);
-  display:flex;align-items:center;justify-content:center;
-  gap:10px;font-weight:bold;text-align:center;
+  text-align:center;
+  font-weight:bold;
 }
-.header img{width:34px;height:34px;border-radius:10px}
 
 .container{max-width:480px;margin:auto;padding:12px}
 
+/* ===== APP CARD ===== */
 .card{
   background:#141933;border-radius:18px;
   padding:14px;margin-bottom:16px;
-  position:relative;text-align:center;
+  text-align:center;position:relative;
 }
 .badge{
   position:absolute;top:10px;right:10px;
-  background:#ff3b3b;color:#fff;
-  font-size:11px;padding:4px 10px;border-radius:20px;
+  background:#ff3b3b;font-size:11px;
+  padding:4px 10px;border-radius:20px;
 }
 .icon{width:70px;height:70px;border-radius:16px}
-.meta{font-size:12px;color:#aaa;margin-top:4px}
-
 .buttons{display:flex;gap:10px;margin-top:12px}
 .buttons a{
   flex:1;padding:10px;border-radius:12px;
-  text-decoration:none;color:#fff;font-size:13px;
+  text-decoration:none;color:#fff;font-size:13px
 }
 .download{background:#6c63ff}
 .study{background:#19c9a8}
 
-/* TESTBOOK OFFER */
-.testbook-offer{
-  margin-top:12px;background:#1a1f3d;
-  border-radius:14px;padding:10px;
+/* ===== RIBBON CARD ===== */
+.ribbon-card{
+  position:relative;
+  padding:14px;
+  border-radius:16px;
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(16px);
+  overflow:hidden;
+  text-align:center;
 }
-.testbook-offer img{width:100%;border-radius:12px}
-.testbook-offer a{
-  display:block;margin-top:8px;padding:10px;
-  border-radius:12px;
-  background:linear-gradient(135deg,#ff9900,#ffcc66);
-  color:#000;font-weight:bold;text-decoration:none;
-  font-size:13px;
+.ribbon-card::before{
+  content:"";
+  position:absolute;
+  inset:-60%;
+  background:linear-gradient(120deg,#ff00cc,#3333ff,#00ffee,#ff00cc);
+  animation:ribbonSpin 6s linear infinite;
+  z-index:-2;
 }
-.testbook-offer span{font-size:11px;color:#aaa}
+.ribbon-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  z-index:-1;
+}
+@keyframes ribbonSpin{to{transform:rotate(360deg)}}
 
-/* ABOUT */
 .about{
-  background:#141933;border-radius:16px;
-  padding:14px;margin:20px 0;
+  background:#141933;
+  border-radius:18px;
+  padding:16px;
+  margin:20px 0;
 }
 .about img{
   width:100px;height:100px;border-radius:14px;
   display:block;margin:auto;
 }
-.about h2{text-align:center;margin:10px 0 4px}
-.about p{text-align:center;font-size:12px;color:#aaa}
 
-.skills{
-  display:flex;gap:10px;flex-wrap:wrap;
-  justify-content:center;margin-top:14px;
-}
-.skill{
-  width:90px;height:90px;border-radius:50%;
-  background:radial-gradient(circle at top,#1f2550,#0b0f1f);
-  display:flex;align-items:center;justify-content:center;
-  font-size:12px;
+.about-grid,.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:14px;
 }
 
-.social a{
-  display:flex;align-items:center;gap:12px;
-  background:#1a1f3d;padding:12px;
-  border-radius:14px;margin-bottom:10px;
-  color:#fff;text-decoration:none;
+/* ===== SOCIAL ===== */
+.social-card{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  text-decoration:none;
+  color:#fff;
+  font-weight:600;
+  transition:.35s;
 }
-.social img{width:24px;height:24px}
+.social-card img{width:26px;height:26px}
+.social-card:hover{
+  transform:translateY(-6px) scale(1.05);
+  box-shadow:0 0 30px rgba(108,99,255,.7);
+}
 
 .footer{
-  margin:25px 10px;padding:14px;
+  margin:25px 10px;
+  padding:14px;
   border-radius:14px;
-  background:linear-gradient(180deg,#0b0f1f,#141933);
-  border:1px solid rgba(108,99,255,.25);
-  text-align:center;font-size:12px;color:#aaa;
+  background:#0b0f1f;
+  text-align:center;
+  font-size:12px;
+  color:#aaa;
 }
-.footer span{display:block;margin-top:6px;color:#6c63ff}
+.footer span{color:#6c63ff}
 </style>
 </head>
 
 <body>
 
-<!-- ================= SPLASH ================= -->
+<!-- SPLASH -->
 <div id="splash">
   <div class="splash-inner">
-    <div class="splash-logo">
-      <img src="https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/8717919b4fdb32507f78f8e182d7bb746430f4f4/image.png">
-    </div>
-
+    <div class="splash-logo"></div>
     <div class="loading-text">LOADING</div>
-
-    <div class="progress-box">
-      <div class="progress-bar" id="bar"></div>
-    </div>
-
+    <div class="progress-box"><div class="progress-bar" id="bar"></div></div>
     <div class="percent" id="percent">0%</div>
-
     <div class="splash-brand">MADXROHIT</div>
   </div>
 </div>
 
-<div class="header">
-  <img src="https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/8717919b4fdb32507f78f8e182d7bb746430f4f4/image.png">
-  MADXROHIT – All Institutes Under One Universe
-</div>
+<div class="header">MADXROHIT – All Institutes Under One Universe</div>
 
+<!-- ===== 15 APPS HERE ===== -->
 <div class="container" id="appList"></div>
 
 <div class="container">
-<div class="about">
-  <h3 style="text-align:center;">About Developer</h3>
-  <img src="https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/1608433c03fe7040cfe5a2bcb33177d831497689/ROHIT_image.png">
-  <h2>MADXROHIT</h2>
- <div class="info-card"><div class="info-icon">🎓</div>Class 12th (PCMB)</div>
-  <div class="info-card"><div class="info-icon">📍</div>Bihar, India</div>
-  <div class="info-card"><div class="info-icon">🎂</div>23 August | Age 17</div>
-  <div class="info-card"><div class="info-icon">🚀</div>Founder – MADXROHIT</div>
 
-  <h3 style="text-align:center;">Skills</h3>
-  <div class="skills">
-    <div class="skill">HTML</div>
-    <div class="skill">CSS</div>
-    <div class="skill">JS</div>
-    <div class="skill">UI/UX</div>
-    <div class="skill">App Dev</div>
+<!-- ABOUT -->
+<div class="about">
+  <h3 style="text-align:center">About Developer</h3>
+  <img src="https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/1608433c03fe7040cfe5a2bcb33177d831497689/ROHIT_image.png">
+  <h2 style="text-align:center">MADXROHIT</h2>
+
+  <div class="about-grid">
+    <div class="ribbon-card">🎓 Class 12th (PCMB)</div>
+    <div class="ribbon-card">📍 Bihar, India</div>
+    <div class="ribbon-card">🎂 23 August</div>
+    <div class="ribbon-card">🚀 Founder</div>
   </div>
 
-  <div class="social">
-    <a href="https://whatsapp.com/channel/0029VakDgLmBA1f6TRykhY0E">
+  <h3 style="text-align:center;margin-top:18px">Skills</h3>
+  <div class="skills-grid">
+    <div class="ribbon-card">HTML</div>
+    <div class="ribbon-card">CSS</div>
+    <div class="ribbon-card">JavaScript</div>
+    <div class="ribbon-card">UI / UX</div>
+  </div>
+
+  <h3 style="text-align:center;margin-top:18px">Connect With Me</h3>
+  <div class="skills-grid">
+    <a class="ribbon-card social-card" href="https://whatsapp.com/channel/0029VakDgLmBA1f6TRykhY0E" target="_blank">
       <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"> WhatsApp
     </a>
-    <a href="https://t.me/+DVRwarcX1bk0NGNl">
+    <a class="ribbon-card social-card" href="https://t.me/+DVRwarcX1bk0NGNl" target="_blank">
       <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png"> Telegram
     </a>
-    <a href="https://instagram.com/madxrohit7">
+    <a class="ribbon-card social-card" href="https://instagram.com/madxrohit7" target="_blank">
       <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"> Instagram
     </a>
-    <a href="https://youtube.com/@madxrohit7">
+    <a class="ribbon-card social-card" href="https://youtube.com/@madxrohit7" target="_blank">
       <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"> YouTube
     </a>
   </div>
@@ -252,25 +228,23 @@ body{
   © 2025 – 2050 • COPYRIGHT PROTECTED
   <span>FREE FOR ALL</span>
 </div>
+
 </div>
 
 <script>
-/* ================= SPLASH ================= */
+/* SPLASH */
 let p=0;
 const bar=document.getElementById("bar");
 const percent=document.getElementById("percent");
 const splash=document.getElementById("splash");
-
 const loader=setInterval(()=>{
   p++;
   bar.style.width=p+"%";
   percent.innerText=p+"%";
   if(p>=100){
     clearInterval(loader);
-    setTimeout(()=>{
-      splash.classList.add("hide");
-      setTimeout(()=>splash.remove(),600);
-    },400);
+    splash.classList.add("hide");
+    setTimeout(()=>splash.remove(),600);
   }
 },25);
 
@@ -286,7 +260,7 @@ document.addEventListener("click",e=>{
   setTimeout(()=>r.remove(),1300);
 });
 
-/* APPS – ALL */
+/* ===== 15 APPS DATA ===== */
 const studyLink="https://whatsapp.com/channel/0029VaoR6zDG8l5720JUZf1T";
 const apps=[
 ["Testbook","https://raw.githubusercontent.com/MADXROHIT/APP-STORE-MADXROHIT-/1b9253f9b1de5baaa93e0cd4f5a20429103124bd/Testbook_image.Png","https://github.com/MADXROHIT/APP-STORE-MADXROHIT-/raw/refs/heads/main/Testbook%20(2).apk"],
@@ -307,16 +281,14 @@ const apps=[
 ];
 
 const list=document.getElementById("appList");
-apps.forEach(a=>{
-  const size=(Math.random()*5+10).toFixed(1)+" MB";
+apps.forEach(app=>{
   list.innerHTML+=`
-  <div class="card">
+  <div class="ribbon-card card">
     <div class="badge">NEW</div>
-    <img src="${a[1]}" class="icon">
-    <h3>${a[0]}</h3>
-    <div class="meta">Version v10.21.6 • ${size}</div>
+    <img src="${app[1]}" class="icon">
+    <h3>${app[0]}</h3>
     <div class="buttons">
-      <a class="download" href="${a[2]}" target="_blank">Download</a>
+      <a class="download" href="${app[2]}" target="_blank">Download</a>
       <a class="study" href="${studyLink}" target="_blank">Let's Study</a>
     </div>
   </div>`;
